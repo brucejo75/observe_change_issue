@@ -21,4 +21,3 @@ Meteor.publish('change', function publishChanges() {
   self.ready();
   return;
 });
-//foobar
