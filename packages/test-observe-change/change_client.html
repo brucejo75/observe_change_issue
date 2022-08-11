@@ -1,0 +1,15 @@
+<template name="change">
+  <h2>Test observe.changed</h2>
+  1. "Change Collection Value"<br>
+  <button id="change">Change Collection Value</button><br>
+  Server output shows 1 update per press - good<br><br>
+
+  2. Click "Restart subscription", then click "Change Collection Value" again.<br>
+  <button id="restart">Restart subscription</button><br>
+  Server shows multiple updates per change now. (each restart adds another)<br><br>
+
+  3. Click "Undefined Value", then click "Change Collection Value".<br>
+  <button id="undefvalue">Undefined Value</button><br>
+  Client console: client does not receive undefined value
+  until the defined value version comes down which overrides undefined version.<br>
+</template>
