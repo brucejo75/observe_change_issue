@@ -14,6 +14,7 @@ Package.onUse(function (api) {
   api.use('ecmascript');
   api.use('mongo');
   api.use(['templating'], 'client');
+  Npm.depends({lodash: '4.17.5'});
   api.mainModule('change_client.js', 'client');
   api.mainModule('change_server.js', 'server');
 });
