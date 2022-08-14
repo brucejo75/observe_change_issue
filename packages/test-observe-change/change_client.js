@@ -16,15 +16,5 @@ Template.change.events({
     Meteor.call('change', function cb(error) {
       if(error) console.error('change method error', error);
     });
-  },
-  'click #undefvalue': () => {
-    Meteor.call('changeOther', function cb(error) {
-      if(error) console.error('changeOther method error', error);
-    });
-  },
-  'click #restart': () => {
-  const instance = Template.instance();
-  instance.changeSub.stop();
-  instance.changeSub = Meteor.subscribe('change');
-}
+  }
 });

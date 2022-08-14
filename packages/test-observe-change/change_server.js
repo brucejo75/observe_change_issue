@@ -1,4 +1,5 @@
 import { ChangeCollection } from './change_common.js';
+import _ from 'lodash';
 
 Meteor.publish('change', function publishChanges() {
   const self = this;
@@ -10,8 +11,9 @@ Meteor.publish('change', function publishChanges() {
       self.ready();
     },
     changed(newDoc, oldDoc) {
-      self.changed('change', newDoc._id, newDoc);
-      console.log('changed doc: ', newDoc);
+      const uDoc = newDoc;
+      self.changed('change', newDoc._id, uDoc);
+      console.log('changed doc: ', uDoc);
       self.ready();
     },
     removed(oldDoc) {
